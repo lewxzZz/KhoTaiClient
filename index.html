@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ABCD123456"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0703CFT4L7"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -66,6 +66,25 @@ body{
 .header{
     text-align:center;
     margin-bottom:40px;
+    position:relative;
+}
+.header::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:350px;
+    height:130px;
+    border-radius:50%;
+
+    background:cyan; /* màu khởi đầu */
+    filter:blur(70px);
+    opacity:0.25;
+
+    animation:rainbowGlow 4s linear infinite;
+
+    z-index:0;
 }
 
 .logo{
@@ -79,9 +98,25 @@ body{
 
 .header h1{
     margin-top:18px;
-    font-size:40px;
-    font-weight:bold;
-    animation: rainbowText 4s linear infinite;
+    font-size:50px;
+    font-weight:900;
+    letter-spacing:3px;
+
+    animation:rainbowText 4s linear infinite;
+    position:relative;
+    z-index:1;
+
+    text-shadow:
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 40px currentColor,
+        0 0 80px currentColor;
+}
+
+.header p,
+.socials{
+    position:relative;
+    z-index:1;
 }
 
 @keyframes rainbowText{
@@ -268,6 +303,15 @@ body{
             translateY(calc(110vh + 100px));
         opacity:0;
     }
+}
+@keyframes rainbowGlow{
+    0%{background:red;}
+    16%{background:orange;}
+    33%{background:yellow;}
+    50%{background:lime;}
+    66%{background:cyan;}
+    83%{background:blue;}
+    100%{background:violet;}
 }
 </style>
 </head>
