@@ -94,11 +94,25 @@ body{
 
 /* Tiêu đề mục */
 .category{
-    font-size:28px;
-    margin:30px 0 15px;
-    padding-left:12px;
-    border-left:5px solid red;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    margin:35px 0 20px;
+    font-size:30px;
+    font-weight:bold;
     animation:rainbowText 4s linear infinite;
+    text-shadow:0 0 15px currentColor;
+}
+
+.category::before,
+.category::after{
+    content:"";
+    width:80px;
+    height:3px;
+    background:red;
+    border-radius:10px;
+    animation:rainbowLine 4s linear infinite;
 }
 
 /* Ô tải */
@@ -152,6 +166,36 @@ body{
 
 .social:hover{
     transform:scale(1.12);
+}
+@keyframes rainbowLine{
+    0%{
+        background:red;
+        box-shadow:0 0 15px red;
+    }
+    16%{
+        background:orange;
+        box-shadow:0 0 15px orange;
+    }
+    33%{
+        background:yellow;
+        box-shadow:0 0 15px yellow;
+    }
+    50%{
+        background:lime;
+        box-shadow:0 0 15px lime;
+    }
+    66%{
+        background:cyan;
+        box-shadow:0 0 15px cyan;
+    }
+    83%{
+        background:blue;
+        box-shadow:0 0 15px blue;
+    }
+    100%{
+        background:violet;
+        box-shadow:0 0 15px violet;
+    }
 }
 </style>
 </head>
